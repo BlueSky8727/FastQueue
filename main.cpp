@@ -5,8 +5,8 @@
 using namespace std;
 
 void clearInput() {
-    cin.clear(); // ล้างสถานะผิด
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ล้างบรรทัด
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 int getMenuInput(int minOption, int maxOption) {
@@ -30,10 +30,11 @@ void menuArrayQueue() {
         cout << "2. Dequeue (Remove data)\n";
         cout << "3. Front (Peek first value)\n";
         cout << "4. Rear (Peek last value)\n";
+        cout << "5. Display (Show all data)\n"; // ✅ เมนู display
         cout << "0. Back to Main Menu\n";
         cout << "Select >> ";
 
-        choice = getMenuInput(0, 4);
+        choice = getMenuInput(0, 5);
         if (choice == -1) continue;
 
         switch (choice) {
@@ -55,6 +56,9 @@ void menuArrayQueue() {
                 break;
             case 4:
                 cout << "Rear value: " << queue.rear() << "\n";
+                break;
+            case 5:
+                queue.display();
                 break;
             case 0:
                 cout << "Returning to main menu\n";
@@ -72,10 +76,11 @@ void menuLinkedQueue() {
         cout << "2. Dequeue (Remove data)\n";
         cout << "3. Front (Peek first value)\n";
         cout << "4. Rear (Peek last value)\n";
+        cout << "5. Display (Show all data)\n"; // ✅ เมนู display
         cout << "0. Back to Main Menu\n";
         cout << "Select >> ";
 
-        choice = getMenuInput(0, 4);
+        choice = getMenuInput(0, 5);
         if (choice == -1) continue;
 
         switch (choice) {
@@ -97,6 +102,9 @@ void menuLinkedQueue() {
                 break;
             case 4:
                 cout << "Rear value: " << queue.rear() << "\n";
+                break;
+            case 5:
+                queue.display();
                 break;
             case 0:
                 cout << "Returning to main menu...\n";

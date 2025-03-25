@@ -14,6 +14,7 @@ public:
     int front();
     int rear();
     bool isEmpty();
+    void display(); 
 };
 
 #endif

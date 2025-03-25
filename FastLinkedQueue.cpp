@@ -59,3 +59,17 @@ int FastLinkedQueue::rear() {
 bool FastLinkedQueue::isEmpty() {
     return frontNode == nullptr;
 }
+
+void FastLinkedQueue::display() {
+    if (frontNode == nullptr) {
+        cout << "Queue is empty.\n";
+        return;
+    }
+    cout << "Queue contents: ";
+    ChainNode* current = frontNode;
+    while (current != nullptr) {
+        cout << current->data << " ";
+        current = current->next;
+    }
+    cout << "\n";
+}

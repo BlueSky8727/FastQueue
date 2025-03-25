@@ -48,3 +48,16 @@ int FastArrayQueue::rear() {
 bool FastArrayQueue::isEmpty() {
     return count == 0;
 }
+
+void FastArrayQueue::display() {
+    if (count == 0) {
+        cout << "Queue is empty.\n";
+        return;
+    }
+    cout << "Queue contents: ";
+    for (int i = 0; i < count; ++i) {
+        int index = (frontIndex + i) % MAX_SIZE;
+        cout << data[index] << " ";
+    }
+    cout << "\n";
+}
